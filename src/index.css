@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 5px;
+  padding: 3px;
+}
+
+body {
+  background-color: teal;
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style-image: url(./components/ContactList/image/social-group.svg);
+  list-style-position: inside;
+}
+
+button {
+  font-weight: 600;
+  padding: 0px 1px;
+  border-style: dotted;
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  background-color: orangered;
+  outline: none;
+}
+
+form {
+  width: 280px;
+  border-style: ridge;
+}
+
+li {
+  border-style: ridge;
+  width: max-content;
+  margin: 5px;
+  background-color: lightgoldenrodyellow;
+}
+
+h1,
+h2,
+h3 {
+  color: midnightblue;
+}
