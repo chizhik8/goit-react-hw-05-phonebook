@@ -35,14 +35,20 @@ button:focus {
 
 form {
   width: 280px;
-  border-style: ridge;
+  border-style: hidden;
+  box-shadow: 0 0 5px 2px;
 }
 
 li {
-  border-style: ridge;
-  width: max-content;
+  border-style: hidden;
+  width: 260px;
   margin: 5px;
-  background-color: lightgoldenrodyellow;
+  background-color: white;
+  /* box-shadow: 0.4em 0.4em 5px rgba(122, 122, 122, 0.5); */
+  box-shadow: 0 0 5px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h1,
