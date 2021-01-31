@@ -1,0 +1,28 @@
+.alert {
+  background-color: tomato;
+  font-size: medium;
+  padding: 5px;
+  border-style: none;
+  box-shadow: 0 0 5px 2px;
+  width: max-content;
+  margin: 0px;
+}
+.Alert-appear {
+  opacity: 0;
+  transform: scale(0.1);
+  transform: translateX(80%);
+}
+
+.Alert-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transform: translateX(60%);
+  transition: transform 500ms ease-in;
+}
+
+.Alert-appear-done {
+  opacity: 0;
+  transform: scale(0);
+  transform: translateX(60%);
+  transition: transform, opacity 500ms ease-in-out;
+}

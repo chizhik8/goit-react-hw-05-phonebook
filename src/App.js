@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { CSSTransition } from 'react-transition-group';
 
 import { ContactForm } from './components/ContactForm/ContactForm';
+import { Alert } from './components/Alert/Alert';
 import ContactList from './components/ContactList/ContactList';
 import { v4 as uuidv4 } from 'uuid';
 import { Filter } from './components/Filter/Filter';
@@ -10,6 +10,7 @@ export class App extends Component {
   state = {
     contacts: [],
     filter: '',
+    alert: '',
   };
 
   componentDidMount() {
@@ -32,13 +33,16 @@ export class App extends Component {
       name,
       number,
     };
+    this.setState({ alert: '' });
+
     this.setState(prevState => {
       if (
         prevState.contacts.find(
           contact => contact.name.toLowerCase() === name.toLowerCase(),
         )
       ) {
-        alert(`${name} is already in contacts`);
+        // alert(`${name} is already in contacts`);
+        this.setState({ alert: true });
         return;
       }
       return {
@@ -73,15 +77,16 @@ export class App extends Component {
   render() {
     return (
       <div>
-        <CSSTransition in={true} appear={true} timeout={500} classNames="Logo">
-          <h1>Phonebook</h1>
-        </CSSTransition>
+        {this.state.alert && <Alert />}
+
         <ContactForm onAddContacts={this.addContacts} />
+
         {this.state.contacts.length ? (
-          <h2>Contacts</h2> && <Filter onInputFilter={this.addFilter} />
+          <Filter onInputFilter={this.addFilter} />
         ) : (
           <h2>Contact list is empty. Please add contact.</h2>
         )}
+
         {this.state.filter.length ? (
           <ContactList
             contacts={this.taskFilter()}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types';
+import './contactform.css';
 
 export class ContactForm extends Component {
   static propTypes = {
@@ -30,27 +32,32 @@ export class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name
-          <input
-            type="text"
-            value={this.state.name}
-            onChange={this.handleInput}
-            name="name"
-          />
-        </label>
-        <label>
-          Number
-          <input
-            type="tel"
-            value={this.state.number}
-            onChange={this.handleInput}
-            name="number"
-          />
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+      <>
+        <CSSTransition in={true} appear timeout={500} classNames="Logo">
+          <h1>Phonebook</h1>
+        </CSSTransition>
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name
+            <input
+              type="text"
+              value={this.state.name}
+              onChange={this.handleInput}
+              name="name"
+            />
+          </label>
+          <label>
+            Number
+            <input
+              type="tel"
+              value={this.state.number}
+              onChange={this.handleInput}
+              name="number"
+            />
+          </label>
+          <button type="submit">Add contact</button>
+        </form>
+      </>
     );
   }
 }

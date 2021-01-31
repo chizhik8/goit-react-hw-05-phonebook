@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  background-color: teal;
+  background-color: lightseagreen;
   margin: 0px;
   padding: 0px;
 }
@@ -29,7 +29,7 @@ button {
 button:hover,
 button:focus {
   cursor: pointer;
-  background-color: orangered;
+  background-color: tomato;
   outline: none;
 }
 
@@ -54,14 +54,6 @@ li {
 h1,
 h2,
 h3 {
-  color: midnightblue;
-}
-
-.Logo-appear {
-  transform: translateX(-100%);
-}
-
-.Logo-appear-active {
-  transform: translateX(0);
-  transition: transform 500ms linear;
+  color: whitesmoke;
+  text-shadow: 2px 2px 2px black, 0 0 0 black;
 }
